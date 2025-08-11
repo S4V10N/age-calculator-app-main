@@ -7,6 +7,13 @@ let dayText = document.getElementsByClassName("day")[0];
 let monthText = document.getElementsByClassName("month")[0];
 let yearText = document.getElementsByClassName("year")[0];
 
+const yearLabel = document.getElementById("year-label");
+const monthLabel = document.getElementById("month-label");
+const dayLabel = document.getElementById("day-label");
+console.log(yearLabel);
+console.log(monthLabel);
+console.log(yearLabel.textContent);
+
 let label = document.getElementsByClassName("red-text");
 let errorText = [
   document.getElementsByClassName("error-text-one")[0],
@@ -114,6 +121,9 @@ function calculateAge(event) {
   monthText.innerText = ageMonth;
   dayText.innerText = ageDay;
 
+  yearLabel.textContent = ageYear === 1 ? "year" : "years";
+  monthLabel.textContent = ageMonth === 1 ? "month" : "months";
+  dayLabel.textContent = ageDay === 1 ? "day" : "days";
 }
 
 calculate.addEventListener("click", calculateAge);
